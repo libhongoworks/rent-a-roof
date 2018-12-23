@@ -1,0 +1,52 @@
+.row {
+    margin: 0;
+}
+
+nav.navbar.container {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+div.userSignIn {
+    display: flex;
+    justify-content: center;
+}
+
+i.far.fa-user {
+    font-size: 2rem;
+    padding-top: .6rem;
+}
+
+div#landing-bg {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../images/capetownnight.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+h1#landing-heading {
+    color: white;
+    font-size: 3rem;
+}
+
+input#suburb-input {
+    width: 100%;
+}
+
+h1#provinces-heading {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+a.provinceLink {
+    text-decoration: none;
+}
+
+a.provinceLink:hover {
+    color: red;
+}
