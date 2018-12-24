@@ -479,69 +479,88 @@ function (_Component) {
   }
 
   _createClass(Index, [{
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      var _this2 = this;
+
+      var prevState = this.state.provinces;
+      db.collection("provinces").get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+          prevState.push({
+            id: doc.id,
+            name: doc.data().name
+          });
+
+          _this2.setState({
+            provinces: prevState
+          });
+        });
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 63
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 64
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeadContents, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 65
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 67
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "landing-bg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 68
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "landing-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 69
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "landing-heading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 54
+          lineNumber: 70
         },
         __self: this
       }, "A home for everyone"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 55
+          lineNumber: 71
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 56
+          lineNumber: 72
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_searchInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 73
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -549,21 +568,21 @@ function (_Component) {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 61
+          lineNumber: 77
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "provinces-heading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 62
+          lineNumber: 78
         },
         __self: this
       }, "Property by provinces"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 63
+          lineNumber: 79
         },
         __self: this
       }, this.state.provinces.map(function (province) {
@@ -572,7 +591,7 @@ function (_Component) {
           key: province.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 65
+            lineNumber: 81
           },
           __self: this
         });

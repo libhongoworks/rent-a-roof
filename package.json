@@ -12,6 +12,7 @@
   "author": "Libhongo Langa",
   "license": "MIT",
   "dependencies": {
+    "@firebase/firestore-types": "^0.8.0",
     "firebase": "^5.7.1",
     "next": "^7.0.2",
     "react": "^16.7.0",

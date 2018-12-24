@@ -42,6 +42,22 @@ export default class Index extends Component {
       provinces: []
     };
   }
+  componentWillMount() {
+    const prevState = this.state.provinces;
+    db.collection("provinces")
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          prevState.push({
+            id: doc.id,
+            name: doc.data().name
+          });
+          this.setState({
+            provinces: prevState
+          });
+        });
+      });
+  }
   render() {
     return (
       <div>
