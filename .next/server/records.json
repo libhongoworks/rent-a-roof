@@ -1,0 +1,67 @@
+{
+  "modules": {
+    "byIdentifier": {
+      "external \"react\"": 0,
+      "external \"next/link\"": 1,
+      "external \"firebase/app\"": 2,
+      "external \"next/head\"": 3,
+      "multi ./pages/index.js": 4,
+      "external \"firebase/firestore\"": 5,
+      "multi ./pages/properties.js": 6,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/properties.js": 7,
+      "multi ./pages/property.js": 8,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/property.js": 9,
+      "multi node_modules/next/dist/pages/_app.js": 10,
+      "node_modules/next/dist/pages/_app.js": 11,
+      "external \"next/app\"": 12,
+      "multi node_modules/next/dist/pages/_error.js": 13,
+      "node_modules/next/dist/pages/_error.js": 14,
+      "external \"next/error\"": 15,
+      "multi node_modules/next/dist/pages/_document.js": 16,
+      "node_modules/next/dist/pages/_document.js": 17,
+      "external \"next/document\"": 18,
+      "node_modules/next/dist/build/webpack/loaders/next-babel-loader.js??ref--4!pages/index.js 423854d4acbf633fb538f4dfce9c80be": 19
+    },
+    "usedIds": {
+      "0": 0,
+      "1": 1,
+      "2": 2,
+      "3": 3,
+      "4": 4,
+      "5": 5,
+      "6": 6,
+      "7": 7,
+      "8": 8,
+      "9": 9,
+      "10": 10,
+      "11": 11,
+      "12": 12,
+      "13": 13,
+      "14": 14,
+      "15": 15,
+      "16": 16,
+      "17": 17,
+      "18": 18,
+      "19": 19
+    }
+  },
+  "chunks": {
+    "byName": {
+      "static\\cT7woTJGu6EY80h4rWJqy\\pages\\index.js": 0,
+      "static\\cT7woTJGu6EY80h4rWJqy\\pages\\properties.js": 1,
+      "static\\cT7woTJGu6EY80h4rWJqy\\pages\\property.js": 2,
+      "static\\cT7woTJGu6EY80h4rWJqy\\pages\\_app.js": 3,
+      "static\\cT7woTJGu6EY80h4rWJqy\\pages\\_error.js": 4,
+      "static\\cT7woTJGu6EY80h4rWJqy\\pages\\_document.js": 5
+    },
+    "bySource": {},
+    "usedIds": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5
+    ]
+  }
+}
