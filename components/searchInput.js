@@ -19,7 +19,7 @@ export default class SearchInput extends Component {
       <input
         id="suburb-input"
         className="form-control"
-        placeholder="Type Suburb"
+        placeholder="Type Town/City"
         value={this.state.searchTerm}
         onChange={this.handleSearchInput}
       />
