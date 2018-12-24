@@ -1,6 +1,8 @@
+import React, { Component } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import Header from "../components/header";
+import Province from "../components/provinces";
+import SearchInput from "../components/searchInput";
 
 const HeadContents = () => (
   <div>
@@ -19,80 +21,48 @@ const HeadContents = () => (
   </div>
 );
 
-export default () => (
-  <div>
-    <Head>
-      <HeadContents />
-    </Head>
-    <Header />
-    <div id="landing-bg">
-      <div id="landing-text">
-        <h1 id="landing-heading">A home for everyone</h1>
-        <br />
-        <br />
-        <input
-          id="suburb-input"
-          className="form-control"
-          placeholder="Type Suburb"
-        />
-      </div>
-    </div>
+export default class Index extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      provinces: [
+        { id: 1, name: "Gauteng" },
+        { id: 2, name: "Western Cape" },
+        { id: 3, name: "KwaZulu Natal" },
+        { id: 4, name: "Eastern Cape" },
+        { id: 5, name: "Free State" },
+        { id: 6, name: "Northern Cape" },
+        { id: 7, name: "North West" },
+        { id: 8, name: "Mpumalanga" },
+        { id: 9, name: "Limpopo" }
+      ]
+    };
+  }
+  render() {
+    return (
+      <div>
+        <Head>
+          <HeadContents />
+        </Head>
+        <Header />
+        <div id="landing-bg">
+          <div id="landing-text">
+            <h1 id="landing-heading">A home for everyone</h1>
+            <br />
+            <br />
+            <SearchInput />
+          </div>
+        </div>
 
-    <div id="provinces-list" className="container">
-      <h1 id="provinces-heading">Property by provinces</h1>
-      <div className="row">
-        <div className="col">
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Gauteng</h4>
-            </a>
-          </Link>
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Western Cape</h4>
-            </a>
-          </Link>
-          <Link href="">
-            <a className="provinceLink">
-              <h4>KwaZulu Natal</h4>
-            </a>
-          </Link>
-        </div>
-        <div className="col">
-          <Link href="">
-            <a className="provinceLink">
-              <h4>North West</h4>
-            </a>
-          </Link>
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Eastern Cape</h4>
-            </a>
-          </Link>
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Northern Cape</h4>
-            </a>
-          </Link>
-        </div>
-        <div className="col">
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Limpopo</h4>
-            </a>
-          </Link>
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Mpumalang</h4>
-            </a>
-          </Link>
-          <Link href="">
-            <a className="provinceLink">
-              <h4>Free State</h4>
-            </a>
-          </Link>
+        <div id="provinces-list" className="container">
+          <h1 id="provinces-heading">Property by provinces</h1>
+          <div className="row">
+            {this.state.provinces.map(province => {
+              return <Province name={province.name} key={province.id} />;
+            })}
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
