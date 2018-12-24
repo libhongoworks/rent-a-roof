@@ -3,6 +3,19 @@ import Head from "next/head";
 import Header from "../components/header";
 import Province from "../components/provinces";
 import SearchInput from "../components/searchInput";
+import { dbConfig } from "../static/config/db";
+import firebase from "firebase/app";
+import "firebase/firestore";
+
+if (!firebase.apps.length) {
+  firebase.initializeApp(dbConfig);
+  console.log("Firebase initialized");
+}
+
+const db = firebase.firestore();
+db.settings({
+  timestampsInSnapshots: true
+});
 
 const HeadContents = () => (
   <div>
@@ -24,18 +37,9 @@ const HeadContents = () => (
 export default class Index extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      provinces: [
-        { id: 1, name: "Gauteng" },
-        { id: 2, name: "Western Cape" },
-        { id: 3, name: "KwaZulu Natal" },
-        { id: 4, name: "Eastern Cape" },
-        { id: 5, name: "Free State" },
-        { id: 6, name: "Northern Cape" },
-        { id: 7, name: "North West" },
-        { id: 8, name: "Mpumalanga" },
-        { id: 9, name: "Limpopo" }
-      ]
+      provinces: []
     };
   }
   render() {

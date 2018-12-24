@@ -375,6 +375,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/header */ "./components/header.js");
 /* harmony import */ var _components_provinces__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/provinces */ "./components/provinces.js");
 /* harmony import */ var _components_searchInput__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/searchInput */ "./components/searchInput.js");
+/* harmony import */ var _static_config_db__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../static/config/db */ "./static/config/db.js");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! firebase/app */ "firebase/app");
+/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(firebase_app__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! firebase/firestore */ "firebase/firestore");
+/* harmony import */ var firebase_firestore__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(firebase_firestore__WEBPACK_IMPORTED_MODULE_7__);
 var _jsxFileName = "C:\\Users\\User\\Desktop\\rent-a-roof\\pages\\index.js";
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -401,17 +406,30 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
+
+
+if (!firebase_app__WEBPACK_IMPORTED_MODULE_6___default.a.apps.length) {
+  firebase_app__WEBPACK_IMPORTED_MODULE_6___default.a.initializeApp(_static_config_db__WEBPACK_IMPORTED_MODULE_5__["dbConfig"]);
+  console.log("Firebase initialized");
+}
+
+var db = firebase_app__WEBPACK_IMPORTED_MODULE_6___default.a.firestore();
+db.settings({
+  timestampsInSnapshots: true
+});
+
 var HeadContents = function HeadContents() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 8
+      lineNumber: 21
     },
     __self: this
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("title", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
+      lineNumber: 22
     },
     __self: this
   }, "Rent A Roof"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -419,7 +437,7 @@ var HeadContents = function HeadContents() {
     href: "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 10
+      lineNumber: 23
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -429,7 +447,7 @@ var HeadContents = function HeadContents() {
     crossorigin: "anonymous",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14
+      lineNumber: 27
     },
     __self: this
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("link", {
@@ -437,7 +455,7 @@ var HeadContents = function HeadContents() {
     href: "../static/css/index.css",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 33
     },
     __self: this
   }));
@@ -455,34 +473,7 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(Index).call(this, props));
     _this.state = {
-      provinces: [{
-        id: 1,
-        name: "Gauteng"
-      }, {
-        id: 2,
-        name: "Western Cape"
-      }, {
-        id: 3,
-        name: "KwaZulu Natal"
-      }, {
-        id: 4,
-        name: "Eastern Cape"
-      }, {
-        id: 5,
-        name: "Free State"
-      }, {
-        id: 6,
-        name: "Northern Cape"
-      }, {
-        id: 7,
-        name: "North West"
-      }, {
-        id: 8,
-        name: "Mpumalanga"
-      }, {
-        id: 9,
-        name: "Limpopo"
-      }]
+      provinces: []
     };
     return _this;
   }
@@ -493,64 +484,64 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 43
+          lineNumber: 47
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(next_head__WEBPACK_IMPORTED_MODULE_1___default.a, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 44
+          lineNumber: 48
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(HeadContents, {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 45
+          lineNumber: 49
         },
         __self: this
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 47
+          lineNumber: 51
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "landing-bg",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 48
+          lineNumber: 52
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "landing-text",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 49
+          lineNumber: 53
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "landing-heading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 50
+          lineNumber: 54
         },
         __self: this
       }, "A home for everyone"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 51
+          lineNumber: 55
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 52
+          lineNumber: 56
         },
         __self: this
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_searchInput__WEBPACK_IMPORTED_MODULE_4__["default"], {
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 53
+          lineNumber: 57
         },
         __self: this
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -558,21 +549,21 @@ function (_Component) {
         className: "container",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 57
+          lineNumber: 61
         },
         __self: this
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         id: "provinces-heading",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 58
+          lineNumber: 62
         },
         __self: this
       }, "Property by provinces"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "row",
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 59
+          lineNumber: 63
         },
         __self: this
       }, this.state.provinces.map(function (province) {
@@ -581,7 +572,7 @@ function (_Component) {
           key: province.id,
           __source: {
             fileName: _jsxFileName,
-            lineNumber: 61
+            lineNumber: 65
           },
           __self: this
         });
@@ -596,6 +587,27 @@ function (_Component) {
 
 /***/ }),
 
+/***/ "./static/config/db.js":
+/*!*****************************!*\
+  !*** ./static/config/db.js ***!
+  \*****************************/
+/*! exports provided: dbConfig */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "dbConfig", function() { return dbConfig; });
+var dbConfig = {
+  apiKey: "AIzaSyDYLRCkHsB3c0iaNCBudn4ZG7uCR9Tsbt8",
+  authDomain: "rentaroofza.firebaseapp.com",
+  databaseURL: "https://rentaroofza.firebaseio.com",
+  projectId: "rentaroofza",
+  storageBucket: "rentaroofza.appspot.com",
+  messagingSenderId: "601210377767"
+};
+
+/***/ }),
+
 /***/ 3:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
@@ -605,6 +617,28 @@ function (_Component) {
 
 module.exports = __webpack_require__(/*! ./pages/index.js */"./pages/index.js");
 
+
+/***/ }),
+
+/***/ "firebase/app":
+/*!*******************************!*\
+  !*** external "firebase/app" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/app");
+
+/***/ }),
+
+/***/ "firebase/firestore":
+/*!*************************************!*\
+  !*** external "firebase/firestore" ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("firebase/firestore");
 
 /***/ }),
 
